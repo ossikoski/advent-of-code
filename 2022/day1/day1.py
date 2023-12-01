@@ -2,7 +2,6 @@ with open('./2022/day1/input.txt', 'r') as file:
     cals = file.read()
 
 cals = cals.split('\n')
-print(cals)
 
 all_cals = []
 elf_cals = 0
@@ -13,4 +12,9 @@ for c in cals:
         continue
     elf_cals += int(c)
 
-print("Max cals:", max(all_cals))
+top3 = 0
+all_cals.sort()
+for c in all_cals[-3:]:
+    top3 += c
+
+print("Top3:", top3) 
