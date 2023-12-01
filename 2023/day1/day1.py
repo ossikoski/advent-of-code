@@ -23,9 +23,6 @@ for l in lines:
         indices.sort(key = lambda tup: tup[0])
         return indices
 
-    if l == '1eight3fivesix87five':
-        pass
-        print(":D")
     indices = get_indices_sorted(l)
     if indices:
         numword1 = l[indices[0][0]:indices[0][1]]
