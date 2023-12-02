@@ -12,29 +12,29 @@ def calc_game(line):
     win_points = 0  # 0, 3 or 6
     choice_points = 0
     if me == 'X':
-        choice_points = 1
+        win_points = 0
         if opp == 'A':
-            win_points = 3
+            choice_points = 3
         elif opp == 'B':
-            win_points = 0
+            choice_points = 1
         else:
-            win_points = 6
+            choice_points = 2
     elif me == 'Y':
-        choice_points = 2
+        win_points = 3
         if opp == 'A':
-            win_points = 6
+            choice_points = 1
         elif opp == 'B':
-            win_points = 3
+            choice_points = 2
         else:
-            win_points = 0
+            choice_points = 3
     else:
-        choice_points = 3
+        win_points = 6
         if opp == 'A':
-            win_points = 0
+            choice_points = 2
         elif opp == 'B':
-            win_points = 6
+            choice_points = 3
         else:
-            win_points = 3
+            choice_points = 1
 
     return win_points + choice_points
 
