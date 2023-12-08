@@ -27,8 +27,7 @@ for r in rows:
     corrs = set(filter(lambda x: x, corrs))
     my = {eval_no_raise(i) for i in m.split(' ')}
 
-    matches = len(list(corrs.intersection(my)))# - 1  # Remove the 0 match
-    print(matches)
+    matches = len(list(corrs.intersection(my)))
     win_total += points(matches)
     corrs = set()
     my = set()
