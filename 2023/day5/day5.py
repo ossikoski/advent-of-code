@@ -28,7 +28,7 @@ def find_loc(phase, num):
     In the last phase returns the location.
     """
     for row in maps[phase]:
-        if num >= row[1] and num < row[1] + row[2]:
+        if num > row[1] and num < row[1] + row[2]:
             diff = row[0] - row[1]
             if phase == 7:
                 return num + diff
@@ -39,9 +39,7 @@ def find_loc(phase, num):
 
 # Loop seeds and find corresponding location:
 locs = []
-for seed_i in range(0, len(maps[0]), 2):
-    print("Iteration:", int(seed_i/2))  # For progress
-    for seed in range(maps[0][seed_i], maps[0][seed_i] + maps[0][seed_i+1]):
-        locs.append(find_loc(1, seed))
+for seed in maps[0]:
+    locs.append(find_loc(1, seed))
 
 print(min(locs))
